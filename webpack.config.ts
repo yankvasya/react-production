@@ -11,11 +11,13 @@ const paths = {
 
 const mode: TBuildMode = 'development'
 const isDev = mode === 'development'
+const port = 3000;
 
 const config: webpack.Configuration = buildWebpackConfig({
     mode: 'development',
     paths,
-    isDev
+    isDev,
+    port,
 })
 
 export default config

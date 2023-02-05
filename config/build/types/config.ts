@@ -9,5 +9,6 @@ export interface TBuildPaths {
 export interface TBuildOptions {
     mode: TBuildMode,
     paths: TBuildPaths,
-    isDev: boolean
+    isDev: boolean,
+    port: number
 }

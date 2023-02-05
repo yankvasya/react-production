@@ -3,6 +3,7 @@ import {TBuildOptions} from "./types/config";
 import {buildRules} from "./buildRules";
 import {buildResolves} from "./buildResolves";
 import {buildPlugins} from "./buildPlugins";
+import {buildDevServer} from "./buildDevServer";
 
 export const buildWebpackConfig = (options: TBuildOptions): webpack.Configuration => {
     const {paths} = options
@@ -18,6 +19,8 @@ export const buildWebpackConfig = (options: TBuildOptions): webpack.Configuratio
             path: paths.output,
             clean: true
         },
-        plugins: buildPlugins(options)
+        plugins: buildPlugins(options),
+        devtool: 'inline-source-map',
+        devServer: buildDevServer(options)
     }
 }
