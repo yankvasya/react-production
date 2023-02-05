@@ -1,7 +1,7 @@
 import webpack from 'webpack';
 import {buildWebpackConfig} from "./config/build/buildWebpackConfig";
 import path from "path";
-import {TBuildMode} from "./config/build/types/config";
+import {TBuildEnv} from "./config/build/types/config";
 
 const paths = {
     html:  path.resolve(__dirname, 'public', 'index.html'),
@@ -9,15 +9,10 @@ const paths = {
     output: path.resolve(__dirname, 'build') ,
 }
 
-const mode: TBuildMode = 'development'
-const isDev = mode === 'development'
-const port = 3000;
-
-const config: webpack.Configuration = buildWebpackConfig({
-    mode: 'development',
-    paths,
-    isDev,
-    port,
-})
-
-export default config
+export default (env: TBuildEnv): webpack.Configuration =>
+    buildWebpackConfig({
+        mode: env.mode,
+        paths,
+        isDev: env.mode === 'development',
+        port: env.port ?? 3000,
+    })

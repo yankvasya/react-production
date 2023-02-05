@@ -6,9 +6,9 @@ import {buildPlugins} from "./buildPlugins";
 import {buildDevServer} from "./buildDevServer";
 
 export const buildWebpackConfig = (options: TBuildOptions): webpack.Configuration => {
-    const {paths} = options
+    const {paths,mode,isDev} = options
     return {
-        mode: "development",
+        mode,
         entry: paths.entry,
         module: {
             rules: buildRules(),
@@ -20,7 +20,7 @@ export const buildWebpackConfig = (options: TBuildOptions): webpack.Configuratio
             clean: true
         },
         plugins: buildPlugins(options),
-        devtool: 'inline-source-map',
-        devServer: buildDevServer(options)
+        devtool: isDev && 'inline-source-map',
+        devServer: isDev ? buildDevServer(options) : undefined
     }
 }
