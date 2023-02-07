@@ -1,5 +1,5 @@
 import {render} from "react-dom";
-import {CountNum} from "./components/CountNum";
+import {CountNum} from "./components/countNum";
 
 render(
     <div>

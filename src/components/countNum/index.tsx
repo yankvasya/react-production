@@ -1,4 +1,5 @@
 import {useState} from "react";
+import './style.scss'
 
 export const CountNum = () => {
     const [count, setCount] = useState(0)
