@@ -12,7 +12,7 @@ export const buildWebpackConfig = (options: TBuildOptions): webpack.Configuratio
         mode,
         entry: paths.entry,
         module: {
-            rules: buildRules(),
+            rules: buildRules(options),
         },
         resolve: buildResolves(),
         output: {

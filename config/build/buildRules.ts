@@ -1,11 +1,12 @@
 import {RuleSetRule} from "webpack";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import {TBuildOptions} from "./types/config";
 
-export const buildRules = (): RuleSetRule[] => {
+export const buildRules = (options: TBuildOptions): RuleSetRule[] => {
     const cssLoader = {
         test: /\.s[ac]ss$/i,
         use: [
-            MiniCssExtractPlugin.loader,
+            options.isDev ? "style-loader" : MiniCssExtractPlugin.loader,
             "css-loader",
             "sass-loader",
         ],
