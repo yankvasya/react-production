@@ -1,9 +1,7 @@
 import {render} from "react-dom";
-import {CountNum} from "./components/countNum";
+import {App} from "./App";
 
 render(
-    <div>
-        <CountNum />
-    </div>,
+    <App/>,
     document.getElementById('root')
 )
