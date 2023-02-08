@@ -4,6 +4,7 @@ import {buildRules} from "./buildRules";
 import {buildResolves} from "./buildResolves";
 import {buildPlugins} from "./buildPlugins";
 import {buildDevServer} from "./buildDevServer";
+import TerserPlugin from "terser-webpack-plugin";
 
 export const buildWebpackConfig = (options: TBuildOptions): webpack.Configuration => {
     const {paths,mode,isDev} = options
@@ -21,6 +22,11 @@ export const buildWebpackConfig = (options: TBuildOptions): webpack.Configuratio
         },
         plugins: buildPlugins(options),
         devtool: isDev && 'inline-source-map',
-        devServer: isDev ? buildDevServer(options) : undefined
+        devServer: isDev ? buildDevServer(options) : undefined,
+        optimization: {
+            minimizer: [new TerserPlugin({
+                extractComments: false,
+            })],
+        }
     }
 }
