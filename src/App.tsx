@@ -1,8 +1,8 @@
-import {CountNum} from "./components/countNum";
 import './global.scss'
 import {Link, Route, Routes} from "react-router-dom";
-import MainPage from "./pages/MainPage";
-import AboutPage from "./pages/AboutPage";
+import {Suspense} from "react";
+import {AboutPageAsync} from "./pages/AboutPage/index.async";
+import {MainPageAsync} from "./pages/MainPage/index.async";
 
 export const App = () => {
     return (
@@ -11,10 +11,12 @@ export const App = () => {
                 <Link to={'/'} >Main page</Link>
                 <Link to={'/about'}>About page</Link>
             </div>
-            <Routes>
-                <Route path={'/'} element={<MainPage/>} />
-                <Route path={'/about'} element={<AboutPage/>}/>
-            </Routes>
+           <Suspense fallback={<div>Loading...</div>}>
+               <Routes>
+                   <Route path={'/'} element={<MainPageAsync/>} />
+                   <Route path={'/about'} element={<AboutPageAsync/>}/>
+               </Routes>
+           </Suspense>
         </div>
     )
 }
