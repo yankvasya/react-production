@@ -3,6 +3,7 @@ import {TBuildOptions} from "./types/config";
 export const buildDevServer = (options: TBuildOptions): DevServerConfig => {
     return {
         port: options.port,
-        open: true
+        open: true,
+        historyApiFallback: true
     }
 }
