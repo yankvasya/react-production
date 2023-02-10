@@ -1,0 +1,13 @@
+@import '../fonts/fonts';
+
+.app {
+  --font-family: Montserrat, "Times New Roman", sans-serif;
+
+  --font-size-m: 16px;
+  --font-line-m: 24px;
+  --font-m: 500 var(--font-size-m) / var(--font-line-m) var(--font-family) ;
+
+  --font-size-l: 24px;
+  --font-line-l: 32px;
+  --font-l: 600 var(--font-size-l) / var(--font-line-l) var(--font-family);
+}

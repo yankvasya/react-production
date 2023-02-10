@@ -1353,6 +1353,11 @@ functions-have-names@^1.2.2:
   resolved "https://registry.yarnpkg.com/functions-have-names/-/functions-have-names-1.2.3.tgz#0404fe4ee2ba2f607f0e0ec3c80bae994133b834"
   integrity sha512-xckBUXyTIqT97tq2x2AMb+g163b5JFysYk0x4qxNFwbfQkmNZoiRHb6sPzI9/QV33WeuvVYBUIiD4NzNIyqaRQ==
 
+gardevoir@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/gardevoir/-/gardevoir-1.0.0.tgz#1a9a3b3d709fbe4fc4507ec59eef7916e0cc574c"
+  integrity sha512-pzJpUwu56U9pqRM46gcT/sASx5FNcqWfDSQKvtr639yRFnvT8HsHuOYn3AAeYRWzTiZOaqA3sRoyZmupQX2+aw==
+
 get-intrinsic@^1.0.2, get-intrinsic@^1.1.1:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/get-intrinsic/-/get-intrinsic-1.2.0.tgz#7ad1dc0535f3a2904bba075772763e5051f6d05f"
