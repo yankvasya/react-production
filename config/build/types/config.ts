@@ -4,6 +4,7 @@ export interface TBuildPaths {
     html: string;
     entry: string;
     output: string;
+    src: string;
 }
 
 export interface TBuildEnv {

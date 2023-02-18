@@ -14,7 +14,7 @@ export const buildWebpackConfig = (options: TBuildOptions): webpack.Configuratio
         module: {
             rules: buildRules(options),
         },
-        resolve: buildResolves(),
+        resolve: buildResolves(options),
         output: {
             filename: '[name].[contenthash].js',
             path: paths.output,
